@@ -1,31 +1,44 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33516.290
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05_Problem_01", "05_Problem_01\05_Problem_01.vcxproj", "{154A0C35-5E24-4821-8C17-40A0B44D1819}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Debug|x64.ActiveCfg = Debug|x64
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Debug|x64.Build.0 = Debug|x64
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Debug|x86.ActiveCfg = Debug|Win32
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Debug|x86.Build.0 = Debug|Win32
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Release|x64.ActiveCfg = Release|x64
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Release|x64.Build.0 = Release|x64
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Release|x86.ActiveCfg = Release|Win32
-		{154A0C35-5E24-4821-8C17-40A0B44D1819}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F54F55CB-769C-4490-8CC2-A3A5258AE1D3}
-	EndGlobalSection
-EndGlobal
+#include <iostream>
+using namespace std;
+
+void PrintTableHeader()
+{
+	cout << "\n\n\t\t\t Multiplication Table From 1 to 10 \n\n"; 
+	cout << "\t";            // \t = 4 Tabs -> 4 Spaces
+
+	for (int i = 1; i <= 10; i++)
+	{
+		cout << i << "\t";
+	}
+	cout << "\n__________________________________________________________________________________________\n";
+}
+
+string ColumSeperator(int i)
+{
+	if (i < 10)
+		return "   |";
+	else
+		return "  |";
+
+}
+
+void PrintMultiblecatinTable()
+{
+	PrintTableHeader();
+
+	for(int i=1; i <= 10; i++)
+	{
+		cout << " " << i << ColumSeperator(i) << "\t";
+		for (int j = 1; j <= 10; j++)
+		{
+			cout << i * j << "\t";
+		}
+		cout << endl;
+	}
+}
+
+int main()
+{
+	PrintMultiblecatinTable();
+	return 0;
+}
